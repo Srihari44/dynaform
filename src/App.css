@@ -1,19 +1,81 @@
 .App {
   text-align: center;
-}
-
-.App-header {
-  background-color: #282c34;
+  color: white;
+  background-color: #0a110a;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  transition: ease-out 0.5s;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+  margin: 15px;
+  padding: 15px;
+  min-width: 225px;
+  border: 0px;
+  border-radius: 0.3rem;
+  font-size: 1.25rem;
+}
+input:focus {
+  box-shadow: 8px 8px 8px #424242;
+  outline: 0px;
+}
+.valInp {
+  font-size: 1.4rem;
+  border-bottom: 2.5px solid;
+  padding: 15px;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  background-color: rgba(83, 83, 83, 0.2);
+}
+.valInp strong {
+  margin-left: 10px;
+}
+.charComponent {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 0.5px solid rgba(160, 160, 160, 0.2);
+  border-radius: 0.3rem;
+  background-color: rgba(5, 5, 5, 0.3);
+  margin: 20px;
+}
+.character {
+  padding: 12px;
+  margin: 12px;
+  border-bottom: 2.5px solid;
+  cursor: pointer;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  background-color: rgba(83, 83, 83, 0.2);
 }
 
+.character:nth-child(odd) {
+  background-color: rgba(180, 180, 180, 0.2);
+}
+
+.character:hover {
+  background-color: rgb(180, 15, 20);
+}
+
+.enter,
+.appear {
+  opacity: 0;
+  transform: rotateX(-90deg);
+}
+.enter-active,
+.appear-active {
+  transition: ease 0.5s, opacity 0.5s;
+  transform: rotateX(0deg);
+  opacity: 1;
+}
+.exit {
+  opacity: 1;
+}
+.exit-active {
+  transition: ease 0.5s, opacity 0.5s;
+  transform: rotateX(90deg);
+  opacity: 0;
+}
