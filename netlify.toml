@@ -1,6 +1,0 @@
-[build]
-  command = "npm run build"
-
-  base = "react-learning-app"
-  
-  publish="react-learning-app/build"
