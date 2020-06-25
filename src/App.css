@@ -10,44 +10,6 @@ h1{
   padding-top: 28px;
 }
 
-.valInp {
-  font-size: 1.4rem;
-  border-bottom: 2.5px solid;
-  padding: 15px;
-  border-top-left-radius: 0.3rem;
-  border-top-right-radius: 0.3rem;
-  background-color: rgba(83, 83, 83, 0.2);
-}
-.valInp strong {
-  margin-left: 10px;
-}
-.charComponent {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  border: 0.5px solid rgba(160, 160, 160, 0.2);
-  border-radius: 0.3rem;
-  background-color: rgba(5, 5, 5, 0.3);
-  margin: 20px;
-}
-.character {
-  padding: 12px;
-  margin: 12px;
-  border-bottom: 2.5px solid;
-  cursor: pointer;
-  border-top-left-radius: 0.3rem;
-  border-top-right-radius: 0.3rem;
-  background-color: rgba(83, 83, 83, 0.2);
-}
-
-.character:nth-child(odd) {
-  background-color: rgba(180, 180, 180, 0.2);
-}
-
-.character:hover {
-  background-color: rgb(180, 15, 20);
-}
-
 .enter,
 .appear {
   opacity: 0;
