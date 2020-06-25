@@ -1,39 +1,18 @@
 import React from "react";
-import { Component } from "react";
-import UserInput from "./Components/userInput";
-import ValidationInput from "./Components/validationInput";
-import CharContainer from "./Components/charContainer";
+import {Route, Switch} from 'react-router-dom'
+import LinkGen from './Components/LinkGenerater/LinkGen'
+import DynamicForm from './Components/DynamicForm/DynamicForm'
 import "./App.css";
 
-class App extends Component {
-  state = {
-    userName: "Abcd",
-  };
-  changeHandler = (event) => {
-    this.setState({
-      userName: event.target.value,
-    });
-  };
-
-  deleteHandeler = (key) => {
-    const userNamesArr = Array.from(this.state.userName);
-    userNamesArr.splice(key, 1);
-    this.setState({
-      userName: userNamesArr.join(""),
-    });
-  };
-
-  render() {
+const App = () => {
     return (
       <div className="App">
-        <UserInput changed={this.changeHandler} value={this.state.userName} />
-        <ValidationInput text={this.state.userName} />
-        <CharContainer
-          charList={this.state.userName}
-          deleted={this.deleteHandeler}
-        />
+          <h1>DynaForm</h1>
+        <Switch>
+        <Route path='/' exact component={LinkGen} />
+        <Route path='/dynalink/:id' exact component={DynamicForm} />
+        </Switch>
       </div>
     );
-  }
 }
 export default App;
