@@ -39,7 +39,7 @@ const DynamicForm = (props) => {
   }, [props.match.params.id]);
 
   return (
-    <div className="Wrapper">
+    <div className="DFormWrapper">
       {state.loaded && state.formData ? (
         <div className="Card">
           <h1 className="Card-title">{state.formData.title}</h1>

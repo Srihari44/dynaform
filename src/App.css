@@ -5,27 +5,7 @@
   transition: ease 0.5s;
   height: 100vh;
 }
-h1{
+.App h1 {
   margin: 0;
   padding-top: 28px;
-}
-
-.enter,
-.appear {
-  opacity: 0;
-  transform: rotateX(-90deg);
-}
-.enter-active,
-.appear-active {
-  transition: ease 0.5s, opacity 0.5s;
-  transform: rotateX(0deg);
-  opacity: 1;
-}
-.exit {
-  opacity: 1;
-}
-.exit-active {
-  transition: ease 0.5s, opacity 0.5s;
-  transform: rotateX(90deg);
-  opacity: 0;
 }

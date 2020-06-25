@@ -1,47 +1,48 @@
-.Wrapper {
+.LinkgenWrapper {
   display: flex;
   flex-direction: column;
   margin-top: 45px;
+  align-items: center;
 }
-form{
-    border: 2px solid rgba(160, 160, 160, 0.2);
-    border-radius: 0.3rem;
-    padding: 14px;
+.LinkgenWrapper form {
+  border: 2px solid rgba(160, 160, 160, 0.2);
+  border-radius: 0.3rem;
+  padding: 18px;
+  margin: auto 5%;
 }
-.input-group p {
+.LinkgenWrapper .input-group {
+  margin-bottom: 10px;
+  font-size: 24px;
   text-align: left;
 }
 
-.input-group{
-    margin-bottom: 10px;
-}
-
-input {
-  padding: 8px;
+.LinkgenWrapper input {
+  padding: 6px;
   min-width: 225px;
   border: 0px;
   border-radius: 0.3rem;
-  font-size: 1rem;
   font-family: monospace;
+  font-size: 24px;
 }
-input:focus {
+.LinkgenWrapper input:focus {
   box-shadow: 4px 4px 4px #424242;
   outline: 0px;
 }
-textarea {
+.LinkgenWrapper textarea {
   padding: 8px;
   min-width: 225px;
+  min-height: 75px;
   border: 0px;
   border-radius: 0.3rem;
-  font-size: 1rem;
+  font-size: 24px;
 }
 
-textarea:focus {
+.LinkgenWrapper textarea:focus {
   box-shadow: 4px 4px 4px #424242;
   outline: 0px;
 }
 
-button {
+.LinkgenWrapper button {
   width: 150px;
   padding: 6px;
   margin-top: 10px;
@@ -53,26 +54,28 @@ button {
   border: 2px solid rgba(160, 160, 160, 0.2);
   font-size: 1rem;
 }
-button:hover{
-    box-shadow: 1px 1px 1px 4px #424242;
+.LinkgenWrapper button:hover {
+  box-shadow: 4px 4px 4px #424242;
 }
 
-.result-div{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding: 10px;
-    border: 2px solid rgba(160, 160, 160, 0.2);
-    border-radius: 0.3rem;
-    margin: 20px;
+.LinkgenWrapper .result-div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 10px;
+  border: 2px solid rgba(160, 160, 160, 0.2);
+  border-radius: 0.3rem;
+  margin: 20px;
+  min-height: 200px;
 }
 
-.result-link{
-    display: block;
-    width: 250px;
-    text-align: center;
-    color: white;
-    line-height: 25px;
-    word-wrap: break-word;
-    font-family: monospace;
+.LinkgenWrapper .result-link {
+  display: block;
+  width: 250px;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  line-height: 25px;
+  word-wrap: break-word;
+  font-family: monospace;
 }

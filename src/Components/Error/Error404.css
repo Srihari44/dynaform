@@ -1,11 +1,14 @@
-.Wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
+.error-Wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  border: 2px solid rgb(180, 15, 15);
+  border-radius: 0.3rem;
 }
 
-.error{
-    color: rgb(165, 20, 20);
+.error {
+  font-weight: bold;
+  font-size: 45px;
 }
