@@ -1,9 +1,8 @@
-import React, { useEffect, useContext } from "react";
+import React, {  useContext } from "react";
 import { UserContext } from "../../Providers/UserProvider";
 import { withRouter, Redirect } from "react-router-dom";
 import { signOut } from "../../Services/firebase"
-import Responses from "../Responses/Responses"
-import Loader from "../Loader/Loader"
+
 
 const Home = (props) => {
     const user = useContext(UserContext);
