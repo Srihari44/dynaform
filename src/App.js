@@ -1,20 +1,27 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import LinkGen from "./Components/LinkGenerater/LinkGen";
-import DynamicForm from "./Components/DynamicForm/DynamicForm";
+import Home from "./Components/Homepage/Home";
+import FormReader from "./Components/FormReader/FormReader";
 import ErrorComp from "./Components/Error/Error404";
+import Login from "./Components/Login/Login"
+import UserProvider from "./Providers/UserProvider";
 import "./App.css";
+import FormBuilder from "./Components/FormBuilder/FormBuilder";
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>DynaForm</h1>
-      <Switch>
-        <Route path="/" exact component={LinkGen} />
-        <Route path="/dynalink/:id" exact component={DynamicForm} />
-        <Route component={ErrorComp} />
-      </Switch>
-    </div>
+    <UserProvider>
+      <div className="App">
+        <h1>DynaForm</h1>
+        <Switch>
+          <Route path="/login" exact component={Login} />
+          <Route path="/" exact component={Home} />
+          <Route path="/buildform" component={FormBuilder} />
+          <Route path="/dynalink/:id" exact component={FormReader} />
+          <Route component={ErrorComp} />
+        </Switch>
+      </div>
+    </UserProvider>
   );
 };
 export default App;

@@ -1,10 +1,10 @@
 import React, { useState, useRef } from "react";
 import { withRouter } from "react-router-dom";
-import "../../Services/firebaseConfig";
+import "../../Services/firebase";
 import firebase from "@firebase/app";
 import "@firebase/firestore";
 import Spinner from "../Loader/Loader";
-import "./LinkGen.css";
+import "./FormBuilder.css";
 
 const LinkGen = () => {
   const [state, stateHandler] = useState({
@@ -51,7 +51,7 @@ const LinkGen = () => {
           }}
         >
           <div className="input-group">
-            <p>Give your card a title</p>
+            <p>Give your form a title</p>
             <input required ref={titRef} className="input-title"></input>
           </div>
           <div className="input-group">
@@ -66,9 +66,15 @@ const LinkGen = () => {
         <div className="result-div">
           <a
             className="result-link"
-            href={window.location.href + "dynalink/" + state.response}
+            href={
+              window.location.origin +
+              "/dynalink/" +
+              state.response
+            }
           >
-            {window.location.href + "dynalink/" + state.response}
+            {window.location.origin +
+              "/dynalink/" +
+              state.response}
           </a>
         </div>
       ) : null}

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
-import "../../Services/firebaseConfig";
+import "../../Services/firebase";
 import firebase from "@firebase/app";
 import "@firebase/firestore";
 import Spinner from "../Loader/Loader";
 import ErrorComp from "../Error/Error404";
-import "./DynamicForm.css";
+import "./FormReader.css";
 
 const DynamicForm = (props) => {
   const [state, stateHandler] = useState({
@@ -16,21 +16,17 @@ const DynamicForm = (props) => {
 
   useEffect(() => {
     const db = firebase.firestore();
-    const docRef = db.collection("Dynalink").doc(props.match.params.id);
+    const docRef = db.collection("forms").doc(props.match.params.id).collection('questions');
     docRef
       .get()
-      .then(function (doc) {
-        if (doc.exists) {
-          stateHandler({
-            formData: doc.data(),
-            loaded: true,
-          });
-        } else {
-          // doc.data() will be undefined in this case
-          stateHandler({
-            loaded: true,
-            error: true,
-          });
+      .then(function (queryData) {
+        if (queryData.empty) { stateHandler({ error: true, loaded: true }); }
+        else {
+         queryData.forEach((doc) => console.log(doc.data()));
+         stateHandler({
+           formData: queryData,
+           loaded: true,
+         }); 
         }
       })
       .catch(function (error) {
@@ -42,9 +38,9 @@ const DynamicForm = (props) => {
     <div className="DFormWrapper">
       {state.loaded && state.formData ? (
         <div className="Card">
-          <h1 className="Card-title">{state.formData.title}</h1>
+          <h1 className="Card-title">{state.formData.name}</h1>
           <hr></hr>
-          <p className="Card-body">{state.formData.body}</p>
+          <p className="Card-body">{state.formData.createdby}</p>
         </div>
       ) : null}
       {!state.loaded ? <Spinner /> : null}
