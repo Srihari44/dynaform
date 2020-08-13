@@ -22,9 +22,11 @@ const Error404 = () => {
 
   return (
     <div className="error-Wrapper">
-      <h1 className="error">404</h1>
-      <h3>That's not found</h3>
-      <p>Redirecting to home page in {state.Ctime} seconds</p>
+      <div className="error-card">
+        <h1 className="error">404</h1>
+        <h3>That's not found</h3>
+        <p>Redirecting to home page in {state.Ctime} seconds</p>
+      </div>
       {state.redirect ? <Redirect to="/" /> : null}
     </div>
   );

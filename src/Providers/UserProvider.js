@@ -1,24 +1,31 @@
 import React, { Component, createContext } from "react";
-import { auth } from '../Services/firebase';
-
-export const UserContext = createContext({ user: null });
+import { auth } from "../Services/firebase";
+import Loader from '../Components/Loader/Loader'
+export const UserContext = createContext({ user: {} });
 class UserProvider extends Component {
   state = {
-    user: null,
+    user: {},
+    isLoading: true  };
+
+  componentDidUpdate = () => {
+
   };
 
   componentDidMount = () => {
-    auth.onAuthStateChanged((userAuth) => {
-      this.setState({ user: userAuth });
-    });
-  };
+    auth.onAuthStateChanged(
+      (userAuth) => {
+        this.setState({ user: userAuth, isLoading: false })
+      }
+    )
+  }
 
   render() {
     return (
       <UserContext.Provider value={this.state.user}>
-        {this.props.children}
+        {this.state.isLoading ? <Loader/> : this.props.children}
       </UserContext.Provider>
     );
   }
 }
-export default UserProvider;
+
+export default React.memo(UserProvider);

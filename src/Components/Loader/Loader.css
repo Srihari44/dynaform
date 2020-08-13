@@ -6,7 +6,13 @@
   height: 45px;
   animation: spin 2s linear infinite;
 }
-
+.load-container{
+  height: 95vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @keyframes spin {
   0% {
     transform: rotate(0deg);

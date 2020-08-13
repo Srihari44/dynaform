@@ -10,18 +10,18 @@ import FormBuilder from "./Components/FormBuilder/FormBuilder";
 
 const App = () => {
   return (
-    <UserProvider>
-      <div className="App">
+    <div className="App">
+      <UserProvider>
         <h1>DynaForm</h1>
         <Switch>
           <Route path="/login" exact component={Login} />
           <Route path="/" exact component={Home} />
-          <Route path="/buildform" component={FormBuilder} />
+          <Route path="/:user/buildform" component={FormBuilder} />
           <Route path="/dynalink/:id" exact component={FormReader} />
           <Route component={ErrorComp} />
         </Switch>
+        </UserProvider>
       </div>
-    </UserProvider>
   );
 };
 export default App;
